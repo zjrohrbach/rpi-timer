@@ -1,5 +1,7 @@
 import time
 
+time_file_path = "time_file.txt"
+
 digits = [0, 4, 9, 0]       #this is the time digits in reverse order.
                             #Thus, the time is actually digits[3]digits[2]:digits[1]digits[0]
 
@@ -24,5 +26,9 @@ def iterate_digit_down(i):
 
 #function to refresh the time on the display
 def output():
-    # /// Uncomment the following line out for terminal testing without 7-segment displays
-    print str(digits[3]) + str(digits[2]) + ':' + str(digits[1]) + str(digits[0])
+    # /// Uncomment the following line out for terminal testing without 7-segment display
+    time_file = open(time_file_path, "w")
+    new_time_str = str(digits[3]) + str(digits[2]) + ':' + str(digits[1]) + str(digits[0])
+    time_file.write(new_time_str)
+    time_file.close()
+    print(new_time_str)

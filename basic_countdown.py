@@ -2,7 +2,7 @@ import digit_handling_functions as dh
 
 
 x = 0
-while x < 80:
+while x < 5:
     dh.iterate_digit_down(0)
     dh.output()
     x = x + 1
