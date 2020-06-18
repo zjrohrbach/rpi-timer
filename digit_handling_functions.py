@@ -1,4 +1,5 @@
 import time
+import tm1637
 
 time_file_path = "time_file.txt"
 
@@ -32,3 +33,6 @@ def output():
     time_file.write(new_time_str)
     time_file.close()
     print(new_time_str)
+    display = tm1637.TM1637(CLK=5, DIO=6, brightness=1.0)
+    display.ShowDoublepoint(True)
+    display.Show([digits[3], digits[2], digits[1], digits[0]])
